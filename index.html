@@ -55,9 +55,9 @@
 
         for (let i = 0; i < 128 * 128; ++i) {
           const j = i * 4;
-          out_bytes[j + 0] = (32 + prediction_data[i]*754)%256;
-          out_bytes[j + 1] = (89+ prediction_data[i]*45)%256;
-          out_bytes[j + 2] = (17 + prediction_data[i]*64)%256;
+          out_bytes[j + 0] = (prediction_data[i]==2)*255;
+          out_bytes[j + 1] = (prediction_data[i]==1)*255;
+          out_bytes[j + 2] = (prediction_data[i]==0)*255;
           out_bytes[j + 3] = 255;
         }
 
